@@ -1,0 +1,24 @@
+{% extends 'flights/base.html' %}
+
+{% block content %}
+<h2>Register Flight</h2>
+<form method="post">
+    {% csrf_token %}
+    <div>
+        <label for="name">Flight Name:</label>
+        <input type="text" id="name" name="name" required>
+    </div>
+    <div>
+        <label for="type">Flight Type:</label>
+        <select id="type" name="type" required>
+            <option value="Nacional">Nacional</option>
+            <option value="Internacional">Internacional</option>
+        </select>
+    </div>
+    <div>
+        <label for="price">Price:</label>
+        <input type="number" id="price" name="price" step="0.01" required>
+    </div>
+    <button type="submit">Register Flight</button>
+</form>
+{% endblock %}
